@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <footer className="bg-gray-400 text-center py-6">FOOTER</footer>;
+  return (
+    <footer className="bg-black text-center content-center min-h-[10vh] text-white">
+      FOOTER
+    </footer>
+  );
 }
