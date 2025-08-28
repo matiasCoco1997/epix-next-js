@@ -27,7 +27,7 @@ export default function Nav() {
   }, [pathname]);
 
   return (
-    <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500">
+    <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500 bg-white">
       <div
         className={`${
           menuOpen ? "pt-4" : "pt-0"
