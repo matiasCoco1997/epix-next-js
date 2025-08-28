@@ -58,7 +58,7 @@ export default function Proyectos() {
                 <img
                   src={proyecto.img}
                   alt={proyecto.title}
-                  className="w-auto h-8 max-w-10"
+                  className="w-auto h-7 max-w-9"
                   style={{ objectFit: "contain" }}
                 />
               </div>
