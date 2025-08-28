@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,10 +28,19 @@ export default function Nav() {
 
   return (
     <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500">
-      <div className="min-h-[10vh] px-4 flex items-center justify-between flex-wrap md:container md:mx-auto">
+      <div
+        className={`${
+          menuOpen ? "pt-4" : "pt-0"
+        } min-h-[10vh] px-4 flex items-center justify-between flex-wrap md:container md:mx-auto`}
+      >
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold text-blue-600">
-            EPIX
+            <Image
+              src="/shared/epix.png"
+              alt="Epix Logo"
+              width={100}
+              height={100}
+            />
           </Link>
         </div>
 
@@ -40,7 +50,11 @@ export default function Nav() {
             className="md:hidden hover:bg-gray-100 transition-colors duration-200 !p-0"
             variant="ghost"
           >
-            {menuOpen ? <X size={32} /> : <Menu size={32} />}
+            {menuOpen ? (
+              <X className="!w-6 !h-6" />
+            ) : (
+              <Menu className="!w-6 !h-6" />
+            )}
           </Button>
         </div>
 
