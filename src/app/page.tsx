@@ -1,5 +1,11 @@
 import Proyectos from "@/components/proyectos";
 import Carousel from "@/components/ui/carousel";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Epix - Home",
+  description: "Conozca más sobre nuestra empresa",
+};
 
 export default function Home() {
   return (
