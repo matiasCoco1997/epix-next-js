@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased min-h-screen flex flex-col bg-epix-100`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-gray-50`}>
         <header>
           <Nav />
         </header>
