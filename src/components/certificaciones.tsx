@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Certificaciones() {
   return (
     <article className="py-8">
-      <ul className="flex justify-between items-center w-[90%] mx-auto">
+      <ul className="flex justify-between items-center w-[95%] mx-auto">
         <li>
           <Image
             src="/home/certificaciones/iram.webp"
@@ -20,7 +20,7 @@ export default function Certificaciones() {
             alt="Certificación 1"
             width={100}
             height={100}
-            className="w-12 md:w-18"
+            className="w-12 md:w-22"
           />
         </li>
 
@@ -50,7 +50,7 @@ export default function Certificaciones() {
             alt="Certificación 3"
             width={100}
             height={100}
-            className="w-12 md:w-20"
+            className="w-12 md:w-18"
           />
         </li>
       </ul>
