@@ -58,7 +58,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="w-full flex">
+        <div className="w-full flex md:justify-end items-center">
           <Link
             href="https://www.linkedin.com/company/epix-srl/posts/?feedView=all"
             className="cursor-pointer"

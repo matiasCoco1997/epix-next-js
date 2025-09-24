@@ -57,7 +57,9 @@ export default function Empresas() {
     };
 
     updateSquaresCount();
+
     window.addEventListener("resize", updateSquaresCount);
+
     return () => window.removeEventListener("resize", updateSquaresCount);
   }, []);
 
@@ -104,7 +106,8 @@ export default function Empresas() {
                   width={200}
                   height={100}
                   quality={90}
-                  className="max-w-full max-h-full object-contain"
+                  priority
+                  className="max-w-full max-h-full object-contain w-auto h-auto"
                 />
               </div>
             </div>

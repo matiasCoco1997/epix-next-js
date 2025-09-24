@@ -5,41 +5,49 @@ const proyectos = [
     id: 1,
     title: "Ingenierías y auditorias",
     img: "/home/proyectos/pencil.webp",
+    height: "6",
   },
   {
     id: 2,
     title: "Servicios de mantenimiento",
     img: "/home/proyectos/tool.webp",
+    height: "7",
   },
   {
     id: 3,
     title: "Shelters sala de bombas",
     img: "/home/proyectos/shelter-icon.webp",
+    height: "7",
   },
   {
     id: 4,
     title: "Skids sala de bombas",
     img: "/home/proyectos/skids-icon.webp",
+    height: "7",
   },
   {
     id: 5,
     title: "Sistemas de extinción por agua",
     img: "/home/proyectos/water.webp",
+    height: "6",
   },
   {
     id: 6,
     title: "Sistemas de extinción por espuma",
     img: "/home/proyectos/foam-icon.webp",
+    height: "7",
   },
   {
     id: 7,
     title: "Sistemas de detección y aviso de incendio",
     img: "/home/proyectos/detection-icon.webp",
+    height: "7",
   },
   {
     id: 8,
     title: "Sistemas de extinción por gases",
     img: "/home/proyectos/co2-icon.webp",
+    height: "7",
   },
 ];
 
@@ -58,7 +66,7 @@ export default function Proyectos() {
                 <img
                   src={proyecto.img}
                   alt={proyecto.title}
-                  className="w-auto h-7 max-w-9"
+                  className={`w-auto h-${proyecto.height} max-w-9`}
                   style={{ objectFit: "contain" }}
                 />
               </div>
