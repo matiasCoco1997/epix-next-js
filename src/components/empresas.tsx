@@ -79,10 +79,10 @@ export default function Empresas() {
 
   return (
     <>
-      <hr className="bg-epix-300 h-0.5" />
+      <hr className="bg-epix-300 h-0.5 w-[95%] mx-auto" />
 
       <article className="relative mx-auto overflow-hidden pb-8 px-4 w-[90%] md:w-[95%]">
-        <h2 className="text-epix-400 text-center font-light text-2xl pt-6">
+        <h2 className="text-epix-400 text-center font-light text-xl md:text-2xl pt-6">
           Empresas que confian en nosotros
         </h2>
         <div
@@ -96,13 +96,14 @@ export default function Empresas() {
               style={{ width: `${squareWidth}%` }}
             >
               <div
-                className={`w-full h-24 sm:h-32 md:h-40 lg:h-40 flex items-center justify-center text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold rounded-lg`}
+                className={`w-full h-25 sm:h-32 md:h-40 lg:h-35 flex items-center justify-center text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold rounded-lg pt-4`}
               >
                 <Image
                   src={square.img || "/placeholder.svg"}
                   alt={`Logo de ${square.img}`}
                   width={200}
                   height={100}
+                  quality={90}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>

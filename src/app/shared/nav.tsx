@@ -12,7 +12,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   const menuItems = [
-    { id: "home", label: "Home", path: "/" },
+    { id: "home", label: "Inicio", path: "/" },
     {
       id: "obras-servicios",
       label: "Obras y servicios",
@@ -38,8 +38,9 @@ export default function Nav() {
             <Image
               src="/shared/epix.png"
               alt="Epix Logo"
-              width={100}
-              height={100}
+              width={120}
+              height={120}
+              className="w-16 h-auto md:w-20 md:h-auto lg:w-26 lg:h-auto"
             />
           </Link>
         </div>
@@ -65,7 +66,7 @@ export default function Nav() {
               key={item.id}
               variant="ghost"
               asChild
-              className={`hover:underline hover:text-epix-500 hover:bg-white transition-colors cursor-pointer ${
+              className={`hover:underline hover:text-epix-500 underline-offset-4 hover:bg-white transition-colors cursor-pointer ${
                 pathname === item.path
                   ? "text-epix-700 underline hover:bg-white"
                   : "text-epix-500"
