@@ -64,7 +64,7 @@ export default function Carousel({
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-epix-500/70 text-white p-2 rounded-full hover:bg-epix-500 transition-colors cursor-pointer"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-epix-500/70 text-white p-2 rounded-full hover:bg-epix-500 transition-colors cursor-pointer z-50"
           >
             <ChevronLeftIcon />
           </button>

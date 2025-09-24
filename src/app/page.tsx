@@ -3,6 +3,9 @@ import Carousel from "@/components/ui/carousel";
 import type { Metadata } from "next";
 import Certificaciones from "@/components/certificaciones";
 import Empresas from "@/components/empresas";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Epix - Home",
@@ -12,27 +15,76 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="content-center text-center">
+      <section className="content-center text-center relative">
+        <article className="absolute inset-0 flex items-center justify-center md:justify-end z-10 w-[60%] md:w-[90%]">
+          <div className="text-white text-start pr-10 w-[80%] md:w-[90%]">
+            <Image
+              src="/shared/epix.png"
+              alt="EPIX Logo"
+              width={120}
+              height={120}
+              className="w-20 h-auto md:w-30 md:h-auto lg:w-35 lg:h-auto"
+            ></Image>
+
+            <p className="text-base mt-2">
+              Contamos con más de 30 años de experiencia en el rubro de sistemas
+              de extinción y detección de incendios.
+            </p>
+
+            <p className="text-base mt-2">
+              Proveemos un servicio profesional de alta calidad, respaldado por
+              la certificación IRAM 3501 3 y 4 e IRAM 3546.
+            </p>
+
+            <p className="text-base mt-2">
+              Somos un equipo especializado en todas las etapas: diseño,
+              fabricación, montaje y mantenimiento de sistemas de protección
+              contra incendio.
+            </p>
+
+            <Link href="/contacto" className="mt-6  py-2">
+              <Button className="cursor-pointer bg-epix-400 hover:bg-epix-400  hover:scale-105 text-white px-8 mt-4 py-5 w-[15%]">
+                Contactanos
+              </Button>
+            </Link>
+          </div>
+        </article>
+
         <Carousel>
-          <div className="min-h-[90vh] bg-gradient-to-r from-epix-400 to-epix-500 flex items-center justify-center rounded-none">
-            <div className="text-white text-center">
-              <h2 className="text-4xl font-bold">Slide 1</h2>
-              <p className="text-xl mt-2">Contenido del primer slide</p>
-            </div>
+          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
+            <Image
+              src="/home/banner2.webp"
+              alt="EPIX Logo"
+              width={1500}
+              height={1500}
+              quality={100}
+              priority
+              className="w-full h-[90vh]"
+            ></Image>
           </div>
 
-          <div className="min-h-[90vh] bg-gradient-to-r from-epix-400 to-epix-500 flex items-center justify-center rounded-none">
-            <div className="text-white text-center">
-              <h2 className="text-4xl font-bold">Slide 2</h2>
-              <p className="text-xl mt-2">Contenido del segundo slide</p>
-            </div>
+          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
+            <Image
+              src="/home/banner3.webp"
+              alt="EPIX Logo"
+              width={1500}
+              height={1500}
+              quality={100}
+              priority
+              className="w-full h-[90vh]"
+            ></Image>
           </div>
 
-          <div className="min-h-[90vh] bg-gradient-to-r from-epix-400 to-epix-500 flex items-center justify-center rounded-none">
-            <div className="text-white text-center">
-              <h2 className="text-4xl font-bold">Slide 3</h2>
-              <p className="text-xl mt-2">Contenido del tercer slide</p>
-            </div>
+          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
+            <Image
+              src="/home/banner1.webp"
+              alt="EPIX Logo"
+              width={1500}
+              height={1500}
+              quality={100}
+              priority
+              className="w-full h-[90vh]"
+            ></Image>
           </div>
         </Carousel>
       </section>
