@@ -24,7 +24,7 @@ export default function RootLayout({
           <Nav />
         </header>
 
-        <main className="h-full">{children}</main>
+        <main className="h-full flex-grow content-center">{children}</main>
 
         <Footer />
         <Whatsapp />

@@ -11,19 +11,19 @@ const proyectos = [
     id: 2,
     title: "Servicios de mantenimiento",
     img: "/home/proyectos/tool.webp",
-    height: "7",
+    height: "8",
   },
   {
     id: 3,
     title: "Shelters sala de bombas",
     img: "/home/proyectos/shelter-icon.webp",
-    height: "7",
+    height: "8",
   },
   {
     id: 4,
     title: "Skids sala de bombas",
     img: "/home/proyectos/skids-icon.webp",
-    height: "7",
+    height: "8",
   },
   {
     id: 5,
@@ -35,19 +35,19 @@ const proyectos = [
     id: 6,
     title: "Sistemas de extinción por espuma",
     img: "/home/proyectos/foam-icon.webp",
-    height: "7",
+    height: "8",
   },
   {
     id: 7,
     title: "Sistemas de detección y aviso de incendio",
     img: "/home/proyectos/detection-icon.webp",
-    height: "7",
+    height: "8",
   },
   {
     id: 8,
     title: "Sistemas de extinción por gases",
     img: "/home/proyectos/co2-icon.webp",
-    height: "7",
+    height: "8",
   },
 ];
 

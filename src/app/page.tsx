@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <section className="content-center text-center relative">
-        <article className="absolute inset-0 flex items-center justify-center md:justify-end z-10 w-[60%] md:w-[90%]">
-          <div className="text-white text-start pr-10 w-[80%] md:w-[90%]">
+        <article className="absolute inset-0 flex items-center justify-center md:justify-end z-10 w-full md:w-[90%]">
+          <div className="text-white text-start md:pr-10 w-[70%] md:w-[90%]">
             <Image
               src="/shared/epix.png"
               alt="EPIX Logo"
@@ -43,39 +43,16 @@ export default function Home() {
             </p>
 
             <Link href="/contacto" className="mt-6  py-2">
-              <Button className="cursor-pointer bg-epix-400 hover:bg-epix-400  hover:scale-105 text-white px-8 mt-4 py-5 w-[15%]">
+              <Button className="cursor-pointer bg-epix-400 hover:bg-epix-400 hover:scale-105 text-white px-8 mt-4 py-5 w-[90%] md:w-[15%]">
                 Contactanos
               </Button>
             </Link>
           </div>
         </article>
 
+        {/* TODO falta agregar las imagenes para el celular, porque estas se ven horribles */}
         <Carousel>
-          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
-            <Image
-              src="/home/banner2.webp"
-              alt="EPIX Logo"
-              width={1500}
-              height={1500}
-              quality={100}
-              priority
-              className="w-full h-[90vh]"
-            ></Image>
-          </div>
-
-          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
-            <Image
-              src="/home/banner3.webp"
-              alt="EPIX Logo"
-              width={1500}
-              height={1500}
-              quality={100}
-              priority
-              className="w-full h-[90vh]"
-            ></Image>
-          </div>
-
-          <div className="min-h-[90vh] flex items-center justify-center rounded-none">
+          <div className="min-h-[90dvh] flex items-center justify-center rounded-none">
             <Image
               src="/home/banner1.webp"
               alt="EPIX Logo"
@@ -83,7 +60,31 @@ export default function Home() {
               height={1500}
               quality={100}
               priority
-              className="w-full h-[90vh]"
+              className="w-full h-[90dvh]"
+            ></Image>
+          </div>
+
+          <div className="min-h-[90dvh] flex items-center justify-center rounded-none">
+            <Image
+              src="/home/banner2.webp"
+              alt="EPIX Logo"
+              width={1500}
+              height={1500}
+              quality={100}
+              priority
+              className="w-full h-[90dvh]"
+            ></Image>
+          </div>
+
+          <div className="min-h-[90dvh] flex items-center justify-center rounded-none">
+            <Image
+              src="/home/banner3.webp"
+              alt="EPIX Logo"
+              width={1500}
+              height={1500}
+              quality={100}
+              priority
+              className="w-full h-[90dvh]"
             ></Image>
           </div>
         </Carousel>

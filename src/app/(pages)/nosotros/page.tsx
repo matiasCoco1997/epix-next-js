@@ -5,5 +5,9 @@ export const metadata: Metadata = {
 };
 
 export default function Nosotros() {
-  return <h1>Nosotros</h1>;
+  return (
+    <section className="min-h-[72.2dvh] container mx-auto p-4">
+      <h1>Nosotros</h1>
+    </section>
+  );
 }
