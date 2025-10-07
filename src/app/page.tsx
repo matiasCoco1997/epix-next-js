@@ -33,7 +33,7 @@ export default function Home() {
 
             <p className="text-base mt-2">
               Proveemos un servicio profesional de alta calidad, respaldado por
-              la certificación IRAM 3501 3 y 4 e IRAM 3546.
+              las certificaciones IRAM 3501 3 y 4 e IRAM 3546.
             </p>
 
             <p className="text-base mt-2">
@@ -92,7 +92,7 @@ export default function Home() {
 
       <section className="container mx-auto">
         <article>
-          <h1 className="text-center py-8 text-epix-500 text-2xl font-bold title-font mx-5 md:mx-0">
+          <h1 className="text-center py-8 text-epix-400 text-2xl font-bold title-font mx-5 md:mx-0">
             Confianza y tranquilidad frente al fuego
           </h1>
 
