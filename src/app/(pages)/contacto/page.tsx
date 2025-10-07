@@ -41,7 +41,10 @@ export default function Contacto() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    if (loading) return;
+
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value,
@@ -110,7 +113,7 @@ export default function Contacto() {
   const showSkeleton = !timerEnd || !mapLoaded;
 
   return (
-    <section className="min-h-[72.2dvh] container mx-auto p-4">
+    <section className="container mx-auto p-4">
       <section className="text-gray-400 body-font relative">
         <div className="container px-5 py-14 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative border-1 border-gray-100">
