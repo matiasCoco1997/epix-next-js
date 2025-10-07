@@ -27,14 +27,14 @@ export default function Nav() {
   }, [pathname]);
 
   return (
-    <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500 bg-white">
+    <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500">
       <div
         className={`${
           menuOpen ? "pt-4" : "pt-0"
         } min-h-[10vh] px-4 flex items-center justify-between flex-wrap md:container md:mx-auto`}
       >
         <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold text-blue-600">
+          <Link href="/">
             <Image
               src="/shared/epix.png"
               alt="Epix Logo"
@@ -48,7 +48,7 @@ export default function Nav() {
         <div className="flex items-center">
           <Button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden hover:bg-gray-100 transition-colors duration-200 !p-0"
+            className="md:hidden hover:!bg-gray-100 transition-colors duration-200 !p-0"
             variant="ghost"
           >
             {menuOpen ? (
@@ -66,9 +66,9 @@ export default function Nav() {
               key={item.id}
               variant="ghost"
               asChild
-              className={`hover:underline hover:text-epix-500 underline-offset-4 hover:bg-white transition-colors cursor-pointer ${
+              className={`hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
                 pathname === item.path
-                  ? "text-epix-700 underline hover:bg-white"
+                  ? "text-epix-700 underline hover:bg-gray-100"
                   : "text-epix-500"
               }`}
             >
