@@ -31,16 +31,15 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Durante SSR, no aplicar clases condicionales basadas en pathname
   const getLinkClassName = (itemPath: string) => {
     if (!isClient) {
-      return "text-epix-500 hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer";
+      return "text-epix-400 hover:underline hover:text-epix-400 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer";
     }
 
-    return `hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
+    return `hover:underline hover:text-epix-400 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
       pathname === itemPath
         ? "text-epix-700 underline hover:bg-gray-100"
-        : "text-epix-500"
+        : "text-epix-400"
     }`;
   };
 
@@ -55,7 +54,7 @@ export default function Nav() {
   };
 
   return (
-    <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500">
+    <nav className="border-b-2 border-epix-400 min-h-[10vh] text-epix-400">
       <div
         className={`${
           menuOpen ? "pt-4" : "pt-0"
