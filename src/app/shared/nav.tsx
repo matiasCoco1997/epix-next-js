@@ -9,6 +9,7 @@ import Image from "next/image";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const pathname = usePathname();
 
   const menuItems = [
@@ -23,8 +24,35 @@ export default function Nav() {
   ];
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  // Durante SSR, no aplicar clases condicionales basadas en pathname
+  const getLinkClassName = (itemPath: string) => {
+    if (!isClient) {
+      return "text-epix-500 hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer";
+    }
+
+    return `hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
+      pathname === itemPath
+        ? "text-epix-700 underline hover:bg-gray-100"
+        : "text-epix-500"
+    }`;
+  };
+
+  const getMobileLinkClassName = (itemPath: string) => {
+    if (!isClient) {
+      return "justify-start transition-all duration-200 transform hover:translate-x-1 pl-0 cursor-pointer hover:underline";
+    }
+
+    return `justify-start transition-all duration-200 transform hover:translate-x-1 pl-0 cursor-pointer ${
+      pathname === itemPath ? "text-epix-700 underline" : "hover:underline"
+    }`;
+  };
 
   return (
     <nav className="border-b-2 border-epix-500 min-h-[10vh] text-epix-500">
@@ -66,11 +94,7 @@ export default function Nav() {
               key={item.id}
               variant="ghost"
               asChild
-              className={`hover:underline hover:text-epix-500 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
-                pathname === item.path
-                  ? "text-epix-700 underline hover:bg-gray-100"
-                  : "text-epix-500"
-              }`}
+              className={getLinkClassName(item.path)}
             >
               <Link href={item.path}>{item.label}</Link>
             </Button>
@@ -94,11 +118,7 @@ export default function Nav() {
                 key={item.id}
                 variant="ghost"
                 asChild
-                className={`justify-start transition-all duration-200 transform hover:translate-x-1 pl-0 cursor-pointer ${
-                  pathname === item.path
-                    ? "text-epix-700 underline"
-                    : "hover:underline"
-                }`}
+                className={getMobileLinkClassName(item.path)}
               >
                 <Link href={item.path}>{item.label}</Link>
               </Button>
