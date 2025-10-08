@@ -8,9 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState<boolean>(false);
+  const pathname = usePathname(); // Usa directamente pathname
 
   const menuItems = [
     { id: "home", label: "Inicio", path: "/" },
@@ -36,10 +36,23 @@ export default function Nav() {
       return "text-epix-400 hover:underline hover:text-epix-400 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer";
     }
 
+    // Lógica mejorada para detectar rutas activas
+    let isActive = false;
+
+    if (itemPath === "/") {
+      // Para la página de inicio, solo activa si es exactamente "/"
+      isActive = pathname === "/";
+    } else if (itemPath === "/obras-servicios") {
+      // Para obras-servicios, activa para cualquier subruta
+      isActive =
+        pathname === itemPath || pathname.startsWith("/obras-servicios/");
+    } else {
+      // Para otras rutas, comparación exacta
+      isActive = pathname === itemPath;
+    }
+
     return `hover:underline hover:text-epix-400 underline-offset-4 hover:bg-gray-100 transition-colors cursor-pointer ${
-      pathname === itemPath
-        ? "text-epix-700 underline hover:bg-gray-100"
-        : "text-epix-400"
+      isActive ? "text-epix-700 underline hover:bg-gray-100" : "text-epix-400"
     }`;
   };
 
@@ -48,8 +61,20 @@ export default function Nav() {
       return "justify-start transition-all duration-200 transform hover:translate-x-1 pl-0 cursor-pointer hover:underline";
     }
 
+    // Misma lógica para mobile
+    let isActive = false;
+
+    if (itemPath === "/") {
+      isActive = pathname === "/";
+    } else if (itemPath === "/obras-servicios") {
+      isActive =
+        pathname === itemPath || pathname.startsWith("/obras-servicios/");
+    } else {
+      isActive = pathname === itemPath;
+    }
+
     return `justify-start transition-all duration-200 transform hover:translate-x-1 pl-0 cursor-pointer ${
-      pathname === itemPath ? "text-epix-700 underline" : "hover:underline"
+      isActive ? "text-epix-700 underline" : "hover:underline"
     }`;
   };
 

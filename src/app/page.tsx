@@ -43,7 +43,7 @@ export default function Home() {
             </p>
 
             <Link href="/contacto" className="mt-6  py-2">
-              <Button className="cursor-pointer bg-epix-400 hover:bg-epix-400 hover:scale-105 text-white px-8 mt-4 py-5 w-[90%] md:w-[15%]">
+              <Button className="cursor-pointer bg-epix-400 hover:bg-epix-400 hover:scale-105 text-white px-8 mt-4 py-5 w-[90%] md:w-[30%] xl:w-[15%]">
                 Contactanos
               </Button>
             </Link>

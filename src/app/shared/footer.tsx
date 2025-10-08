@@ -8,6 +8,26 @@ export default function Footer() {
 
   const date: number = new Date().getFullYear();
 
+  const getLinkClassName = (itemPath: string) => {
+    let isActive = false;
+
+    if (itemPath === "/") {
+      // Para la página de inicio, solo activa si es exactamente "/"
+      isActive = pathname === "/";
+    } else if (itemPath === "/obras-servicios") {
+      // Para obras-servicios, activa para cualquier subruta
+      isActive =
+        pathname === itemPath || pathname.startsWith("/obras-servicios/");
+    } else {
+      // Para otras rutas, comparación exacta
+      isActive = pathname === itemPath;
+    }
+
+    return `mr-4 cursor-pointer underline-offset-4 ${
+      isActive ? "underline" : "hover:underline"
+    }`;
+  };
+
   return (
     <footer className="bg-black text-center content-center min-h-[10vh] text-gray-500">
       <div className="flex flex-col md:items-end justify-center gap-4 my-4 container mx-auto px-3 md:flex-row md:flex-wrap md:justify-between">
@@ -21,39 +41,22 @@ export default function Footer() {
           />
         </div>
         <div className="text-start flex items-center text-sm w-auto">
-          <Link
-            href="/"
-            className={`mr-4 cursor-pointer underline-offset-4 ${
-              pathname === "/" ? "underline" : "hover:underline"
-            }`}
-          >
+          <Link href="/" className={getLinkClassName("/")}>
             Inicio
           </Link>
 
           <Link
             href="/obras-servicios"
-            className={`mr-4 cursor-pointer underline-offset-4 ${
-              pathname === "/obras-servicios" ? "underline" : "hover:underline"
-            }`}
+            className={getLinkClassName("/obras-servicios")}
           >
             Obras y Servicios
           </Link>
 
-          <Link
-            href="/nosotros"
-            className={`mr-4 cursor-pointer underline-offset-4 ${
-              pathname === "/nosotros" ? "underline" : "hover:underline"
-            }`}
-          >
+          <Link href="/nosotros" className={getLinkClassName("/nosotros")}>
             Nosotros
           </Link>
 
-          <Link
-            href="/contacto"
-            className={`cursor-pointer underline-offset-4 ${
-              pathname === "/contacto" ? "underline" : "hover:underline"
-            }`}
-          >
+          <Link href="/contacto" className={getLinkClassName("/contacto")}>
             Contacto
           </Link>
         </div>
