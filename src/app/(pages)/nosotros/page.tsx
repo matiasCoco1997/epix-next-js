@@ -25,7 +25,7 @@ export default function Nosotros() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-14 lg:gap-20">
           <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl md:text-5xl font-bold  mb-2">30+</div>
             <div className="text-sm md:text-base text-muted-foreground">
@@ -65,10 +65,8 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Main Content Section */}
       <section className="container mx-auto px-4 pb-16 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-          {/* Text Content */}
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
@@ -91,7 +89,6 @@ export default function Nosotros() {
               </div>
             </div>
 
-            {/* Features List */}
             <div className="space-y-4 pt-4">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6  flex-shrink-0 mt-0.5" />
@@ -130,7 +127,6 @@ export default function Nosotros() {
             </div>
           </div>
 
-          {/* Images Grid */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
@@ -158,7 +154,6 @@ export default function Nosotros() {
               </div>
             </div>
 
-            {/* Decorative Element */}
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[120%] bg-primary/5 rounded-full blur-3xl" />
           </div>
         </div>

@@ -17,8 +17,6 @@ export const metadata: Metadata = {
 export default async function ServicioPage({ params }: ServicioPageProps) {
   const { id } = await params;
 
-  console.log(id);
-
   switch (id) {
     case "ingenieria":
       return <Ingenierias />;

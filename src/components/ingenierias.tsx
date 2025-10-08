@@ -1,3 +1,193 @@
+import type { Proyecto } from "@/lib/interface";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import {
+  Flame,
+  ClipboardCheck,
+  GraduationCap,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
+
 export default function Ingenierias() {
-  return <p className="">Ingenierias</p>;
+  const ingenierias: Proyecto[] = [
+    {
+      img: "/proyectos/Ingenierias/ingenierias.png",
+      titulo: "Ingenierías",
+      texto:
+        "Realizamos hipótesis de siniestros y clasificación de riesgos de acuerdo con las normativas NFPA, cálculos hidráulicos utilizando software de precisión, desarrollamos planos de ingeniería básica y de detalle. Además, elaboramos estudios de inversión, garantizando propuestas eficientes y seguras que cumplen con los más altos estándares de la industria.",
+      icon: Flame,
+    },
+    {
+      img: "/proyectos/Ingenierias/auditorias.png",
+      titulo: "Auditorías",
+      texto:
+        "Ofrecemos un servicio integral de análisis y pruebas de sistemas existentes para evaluar su funcionamiento y asegurar su eficacia. Generamos informes detallados del estado actual de los sistemas, junto con recomendaciones personalizadas para optimizar su desempeño. También realizamos curvas de rendimiento de sistemas de bombeo, garantizando un análisis preciso que permita mejorar la eficiencia y seguridad de cada instalación.",
+      icon: ClipboardCheck,
+    },
+    {
+      img: "/proyectos/Ingenierias/capacitaciones.png",
+      titulo: "Capacitaciones",
+      texto:
+        "Capacitación teórico y práctica en relación a técnicas de diseño, mantenimiento, hidráulica aplicada a incendios y normas NFPA.",
+      icon: GraduationCap,
+    },
+  ];
+
+  const badges = [
+    "Normativas NFPA",
+    "Cálculos Hidráulicos",
+    "Análisis de Riesgos",
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <section className="relative overflow-hidden border-b border-border px-6 py-20 md:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-epix-400/10 via-epix-500/8 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgb(225_37_27/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgb(141_30_19/0.12),transparent_50%)]" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-epix-400/30 bg-epix-400/10 px-4 py-2 backdrop-blur-sm">
+            <Sparkles className="size-4 text-epix-400" />
+            <span className="text-sm font-medium text-epix-500">
+              Expertos en Protección Contra Incendios
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            {badges.map((badge, idx) => (
+              <Badge
+                key={idx}
+                variant="secondary"
+                className="px-4 py-1.5 text-sm font-medium shadow-sm"
+              >
+                {badge}
+              </Badge>
+            ))}
+          </div>
+
+          <h1 className="text-balance font-sans text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl">
+            Servicios de
+            <br />
+            <span className="bg-gradient-to-r from-epix-500 via-epix-400 to-epix-500 bg-clip-text text-transparent">
+              Ingeniería
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Soluciones integrales en protección contra incendios con los más
+            altos estándares de la industria
+          </p>
+
+          <div className="mt-12 flex items-center gap-4">
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-epix-500 via-epix-400 to-epix-500" />
+            <Separator className="flex-1" />
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {ingenierias.map((item, idx) => {
+              const Icon = item.icon || Flame;
+              return (
+                <Card
+                  key={idx}
+                  className="group relative overflow-hidden border-border bg-card transition-all duration-500 hover:shadow-2xl hover:shadow-epix-400/20 hover:-translate-y-2"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-epix-400/8 via-transparent to-epix-500/8 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-epix-500 via-epix-400 to-epix-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                    <Image
+                      src={item.img || "/placeholder.svg"}
+                      alt={item.titulo}
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
+
+                    <div className="absolute bottom-4 right-4 flex size-12 items-center justify-center rounded-full bg-epix-400/95 text-white shadow-lg backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-epix-400 group-hover:shadow-epix-400/50">
+                      <Icon className="size-6" />
+                    </div>
+                  </div>
+
+                  <CardContent className="relative p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="h-1 w-12 rounded-full bg-gradient-to-r from-epix-500 to-epix-400 transition-all duration-500 group-hover:w-20" />
+                      <Badge
+                        variant="outline"
+                        className="border-epix-400/40 bg-epix-400/10 text-epix-500 font-semibold"
+                      >
+                        {String(idx + 1).padStart(2, "0")}
+                      </Badge>
+                    </div>
+
+                    <h3 className="mb-4 text-balance font-sans text-2xl font-bold tracking-tight text-card-foreground transition-colors duration-300 group-hover:text-epix-500 md:text-3xl">
+                      {item.titulo}
+                    </h3>
+
+                    <p className=" text-pretty leading-relaxed text-muted-foreground">
+                      {item.texto}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-t border-border px-6 py-16 md:py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-epix-500/5 via-background to-epix-400/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgb(225_37_27/0.08),transparent_70%)]" />
+
+        <div className="relative mx-auto max-w-4xl text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-epix-400/30 bg-epix-400/10 px-4 py-2 backdrop-blur-sm">
+            <Sparkles className="size-4 text-epix-400" />
+            <span className="text-sm font-medium text-epix-500">
+              Consultoría Personalizada
+            </span>
+          </div>
+
+          <h2 className="text-balance font-sans text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            ¿Necesitas asesoría especializada?
+          </h2>
+
+          <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
+            Nuestro equipo de expertos está listo para ayudarte con soluciones
+            personalizadas
+          </p>
+
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Button
+              size="lg"
+              className="group gap-2 bg-epix-400 text-white hover:bg-epix-400 hover:opacity:90 shadow-lg shadow-epix-400/30 w-40 cursor-pointer"
+            >
+              Contactar ahora
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="shadow-sm bg-transparent border-epix-400/30 text-epix-500 hover:bg-epix-400/10 w-40 cursor-pointer"
+            >
+              Ver proyectos
+            </Button>
+          </div>
+
+          <div className="mt-12 flex items-center justify-center gap-4">
+            <div className="h-1 w-16 rounded-full bg-gradient-to-r from-transparent via-epix-400 to-transparent" />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
