@@ -81,69 +81,63 @@ export default function Mantenimientos() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgb(225_37_27/0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgb(141_30_19/0.12),transparent_50%)]" />
 
-        <div className="relative mx-auto container flex">
-          <div className="xl:w-[60%]">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-epix-400/30 bg-epix-400/10 px-4 py-2 backdrop-blur-sm">
-              <Sparkles className="size-4 text-epix-400" />
-              <span className="text-sm font-medium text-epix-500">
-                Expertos en Protección Contra Incendios
-              </span>
-            </div>
-
-            <h1 className="text-balance font-sans text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl">
-              Servicios de
-              <br />
-              <span className="bg-gradient-to-r from-epix-500 via-epix-400 to-epix-500 bg-clip-text text-transparent">
-                Mantenimiento
-              </span>
-            </h1>
-
-            <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Soluciones integrales en protección contra incendios con los más
-              altos estándares de la industria
-            </p>
-
-            <div className="mt-10 max-w-md">
-              <div className="group relative rounded-xl border border-epix-400/30 bg-gradient-to-br from-epix-400/5 via-background to-epix-500/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-epix-400/50 hover:shadow-lg hover:shadow-epix-400/10">
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-epix-500/0 via-epix-400/5 to-epix-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="relative">
-                  <div className="mb-3 flex items-center gap-2">
-                    <div className="flex size-8 items-center justify-center rounded-lg bg-epix-400/10 transition-colors duration-300 group-hover:bg-epix-400/20">
-                      <Navigation className="size-4 text-epix-500" />
-                    </div>
-                    <span className="text-sm font-semibold text-epix-500">
-                      Navegar a otras categorías
-                    </span>
-                  </div>
-
-                  <Select onValueChange={handleSectionChange}>
-                    <SelectTrigger
-                      id="category-select"
-                      name="category"
-                      className="h-12 w-full border-epix-400/40 bg-background/50 text-foreground font-medium shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-epix-400/60 hover:bg-epix-400/5 focus:ring-2 focus:ring-epix-400/20"
-                    >
-                      <SelectValue placeholder="Selecciona una categorías" />
-                    </SelectTrigger>
-                    <SelectContent className="border-epix-400/30">
-                      {buttons.map((button) => (
-                        <SelectItem
-                          key={button.url}
-                          value={button.url}
-                          className="cursor-pointer transition-colors hover:bg-epix-400/10 focus:bg-epix-400/10 focus:text-epix-500"
-                        >
-                          {button.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-            </div>
+        <div className="relative mx-auto container text-center">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-epix-400/30 bg-epix-400/10 px-4 py-2 backdrop-blur-sm">
+            <Sparkles className="size-4 text-epix-400" />
+            <span className="text-sm font-medium text-epix-500">
+              Expertos en Protección Contra Incendios
+            </span>
           </div>
 
-          <div className="hidden xl:block bg-green-300 xl:w-[40%] content-center text-center">
-            IMAGEN DE INGENIERIA
+          <h1 className="text-balance font-sans text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl">
+            Servicios de
+            <br />
+            <span className="bg-gradient-to-r from-epix-500 via-epix-400 to-epix-500 bg-clip-text text-transparent">
+              Mantenimiento
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl mx-auto">
+            Soluciones integrales en protección contra incendios con los más
+            altos estándares de la industria
+          </p>
+
+          <div className="mt-10 max-w-md mx-auto">
+            <div className="group relative rounded-xl border border-epix-400/30 bg-gradient-to-br from-epix-400/5 via-background to-epix-500/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-epix-400/50 hover:shadow-lg hover:shadow-epix-400/10">
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-epix-500/0 via-epix-400/5 to-epix-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="relative">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="flex size-8 items-center justify-center rounded-lg bg-epix-400/10 transition-colors duration-300 group-hover:bg-epix-400/20">
+                    <Navigation className="size-4 text-epix-500" />
+                  </div>
+                  <span className="text-sm font-semibold text-epix-500">
+                    Navegar a otras categorías
+                  </span>
+                </div>
+
+                <Select onValueChange={handleSectionChange}>
+                  <SelectTrigger
+                    id="category-select"
+                    name="category"
+                    className="h-12 w-full border-epix-400/40 bg-background/50 text-foreground font-medium shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-epix-400/60 hover:bg-epix-400/5 focus:ring-2 focus:ring-epix-400/20"
+                  >
+                    <SelectValue placeholder="Selecciona una categorías" />
+                  </SelectTrigger>
+                  <SelectContent className="border-epix-400/30">
+                    {buttons.map((button) => (
+                      <SelectItem
+                        key={button.url}
+                        value={button.url}
+                        className="cursor-pointer transition-colors hover:bg-epix-400/10 focus:bg-epix-400/10 focus:text-epix-500"
+                      >
+                        {button.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
           </div>
         </div>
       </section>
