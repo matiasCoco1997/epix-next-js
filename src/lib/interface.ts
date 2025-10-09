@@ -23,6 +23,7 @@ export interface ServicioPageProps {
 export interface Proyecto {
   img: string;
   titulo: string;
+  subtitulo?: string;
   texto: string;
   icon?: LucideIcon;
 }

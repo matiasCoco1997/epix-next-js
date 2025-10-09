@@ -26,14 +26,14 @@ export default function Nosotros() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-14 lg:gap-20">
-          <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+          <div className="border rounded-xl p-6 text-center hover:shadow-lg transition-shadow bg-epix-300/30 border-epix-300/10">
             <div className="text-4xl md:text-5xl font-bold  mb-2">30+</div>
             <div className="text-sm md:text-base text-muted-foreground">
               Años de Experiencia
             </div>
           </div>
 
-          <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+          <div className="border rounded-xl p-6 text-center hover:shadow-lg transition-shadow bg-epix-300/30 border-epix-300/10">
             <Shield className="w-10 h-10 md:w-12 md:h-12  mx-auto mb-3" />
             <div className="text-sm md:text-base font-semibold mb-1">
               Certificaciones
@@ -43,7 +43,7 @@ export default function Nosotros() {
             </div>
           </div>
 
-          <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+          <div className="border rounded-xl p-6 text-center hover:shadow-lg transition-shadow bg-epix-300/30 border-epix-300/10">
             <Award className="w-10 h-10 md:w-12 md:h-12  mx-auto mb-3" />
             <div className="text-sm md:text-base font-semibold mb-1">
               Calidad Premium
@@ -53,7 +53,7 @@ export default function Nosotros() {
             </div>
           </div>
 
-          <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+          <div className="border rounded-xl p-6 text-center hover:shadow-lg transition-shadow bg-epix-300/30 border-epix-300/10">
             <Users className="w-10 h-10 md:w-12 md:h-12  mx-auto mb-3" />
             <div className="text-sm md:text-base font-semibold mb-1">
               Equipo Experto
